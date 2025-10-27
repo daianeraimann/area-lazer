@@ -1,5 +1,5 @@
-import Jardinagem from "./components/Jardinagem";
+import InfosPrincipais from "./components/InfosPrincipais";
 
 export default function App() {
-  return <Jardinagem/>;
+  return <InfosPrincipais/>;
 }
