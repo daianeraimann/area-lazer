@@ -358,7 +358,7 @@ function Contact() {
             
             {/* IMPORTANTE: Substitua '5500000000001' pelo número do Zé Tomen */}
             <a 
-              href="https://wa.me/5500000000001" 
+              href="https://wa.me/55042991232438" 
               target="_blank" 
               rel="noreferrer" 
               className="flex items-center justify-center gap-3 px-4 py-3 rounded-xl border font-semibold" 
@@ -369,7 +369,7 @@ function Contact() {
             
             {/* IMPORTANTE: Substitua '5500000000002' pelo número da Cirley Tomen */}
             <a 
-              href="https://wa.me/5500000000002" 
+              href="https://wa.me/55042991188770" 
               target="_blank" 
               rel="noreferrer" 
               className="flex items-center justify-center gap-3 px-4 py-3 rounded-xl border font-semibold" 
