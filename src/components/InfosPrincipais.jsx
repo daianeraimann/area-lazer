@@ -207,21 +207,37 @@ function Menus() {
       name: "Churrasco Completo", 
       price: "R$ 90,00", // Projeção de preço
       per: "por pessoa", 
-      features: ["Seleção de carnes nobres", "Acompanhamentos (arroz, maionese, saladas)", "Pão de alho", "Sobremesa inclusa"], 
+      features: ["Seleção de carnes nobres", "Acompanhamentos (arroz, maionese, saladas)", "Entrada (linguicinha, farofa, pão de alho)", "Sobremesa inclusa"], 
       highlight: true 
     },
     { 
-      name: "Almoço/Jantar Tradicional", 
+      name: "Churrasco Simples", 
       price: "R$ 75,00", // Projeção de preço
       per: "por pessoa", 
-      features: ["Opções de pratos quentes (massas, carnes)", "Buffet de saladas variadas", "Acompanhamentos diversos", "Sobremesa"], 
+      features: ["Seleção de carnes nobres", "Acompanhamentos (arroz, maionese, saladas)"], 
     },
-    { 
-      name: "Coquetel & Finger Food", 
-      price: "R$ 60,00", // Projeção de preço
-      per: "por pessoa", 
-      features: ["Canapés e salgados finos", "Mini porções quentes", "Mesa de frios e pães", "Bebidas não-alcoólicas"], 
-    },
+    {
+  name: "Massas Diversas",
+  price: "R$ 60,00",
+  per: "por pessoa",
+  features: [
+    "Variedade de massas: espaguete, penne, nhoque e lasanha",
+    "Molhos à escolha: bolonhesa, branco, pesto e quatro queijos",
+    "Acompanhamentos: queijos, pães e saladas frescas",
+    "Bebidas não alcoólicas inclusas"
+  ],
+},
+{
+  name: "Feijoada Completa",
+  price: "R$ 65,00",
+  per: "por pessoa",
+  features: [
+    "Feijoada tradicional com carnes selecionadas",
+    "Acompanhamentos: arroz, couve refogada, farofa e laranja",
+    "Torresmo crocante",
+    
+  ],
+},
   ], []);
 
   return (
@@ -234,48 +250,66 @@ function Menus() {
   );
 }
 
-// Seção "O Espaço" (Galeria + Piscinas, substitui Differentials)
+// Seção "O Espaço" (Galeria + Piscinas)
 function TheSpace() {
-  const images = [foto1Image, foto2Image, foto3Image, foto4Image];
-  const items = [
-    { title: "Piscinas para Adultos", text: "Duas piscinas para adultos disponíveis para locação. Consulte-nos sobre valores e condições para uso." },
-    { title: "Vestiários Completos", text: "A área das piscinas conta com banheiros e chuveiros completos, garantindo conforto para seus convidados." },
-    { title: "Capacidade para 200 Pessoas", text: "Nosso salão é amplo e acomoda confortavelmente até 200 pessoas sentadas." },
-    { title: "Ambiente Familiar", text: "Administrado por Zé Tomen e Cirley Tomen, garantindo um atendimento próximo e cuidadoso." },
-  ];
-  
-  return (
-    <Section id="espaco" title="Conheça o Espaço" subtitle="Infraestrutura completa para o seu evento.">
-      
-      {/* Galeria de Fotos */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        {images.map((imgSrc, index) => (
-          <motion.img
-            key={index}
-            src={imgSrc}
-            alt={`Foto ${index + 1} do Espaço de Lazer Zé Tomen`}
-            className="w-full h-48 object-cover rounded-2xl border"
-            style={{ borderColor: c.deep }}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          />
-        ))}
-      </div>
+  const images = [foto1Image, foto2Image, foto3Image, foto4Image];
+  const items = [
+    { 
+      title: "Locação do Espaço", 
+      text: "Você pode locar o espaço para momentos especiais com sua família e amigos, sem a necessidade de contratar refeições. Ideal para aniversários, encontros e eventos particulares." 
+    },
+    { 
+      title: "Piscinas Adulto e Infantil", 
+      text: "Disponíveis para locação, mediante consulta de disponibilidade e condições. Aproveite para se refrescar e relaxar em um ambiente tranquilo." 
+    },
+    { 
+      title: "Eventos com Jantar ou Almoço", 
+      text: "Também oferecemos a opção de contratar o espaço junto com o serviço de jantar ou almoço completo, conforme o cardápio desejado." 
+    },
+    { 
+      title: "Capacidade do Salão", 
+      text: "Nosso salão comporta confortavelmente até 200 pessoas sentadas, ideal para festas, confraternizações e eventos corporativos." 
+    },
+    { 
+      title: "Ambiente Familiar", 
+      text: "Um espaço administrado por Zé Tomen e Cirley Tomen, voltado para o convívio familiar, com atendimento acolhedor e cuidadoso." 
+    },
+  ];
 
-      {/* Informações (Piscinas, etc.) */}
-      <div className="grid md:grid-cols-2 gap-6">
-        {items.map((it) => (
-          <div key={it.title} className="rounded-3xl p-6 border" style={{ borderColor: c.deep, background: c.darkest }}>
-            <h3 className="font-semibold mb-2" style={{ color: c.base }}>{it.title}</h3>
-            <p className="text-sm opacity-90" style={{ color: c.base }}>{it.text}</p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
+  return (
+    <Section id="espaco" title="Conheça o Espaço" subtitle="Infraestrutura completa para o seu evento.">
+
+      {/* Galeria de fotos */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        {images.map((imgSrc, index) => (
+          <motion.img
+            key={index}
+            src={imgSrc}
+            alt={`Foto ${index + 1} do Espaço de Lazer Zé Tomen`}
+            className="w-full h-48 object-cover rounded-2xl border"
+            style={{ borderColor: c.deep }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          />
+        ))}
+      </div>
+
+      {/* Blocos de informações */}
+      <div className="grid md:grid-cols-2 gap-6">
+        {items.map((it) => (
+          <div key={it.title} className="rounded-3xl p-6 border" style={{ borderColor: c.deep, background: c.darkest }}>
+            <h3 className="font-semibold mb-2" style={{ color: c.base }}>{it.title}</h3>
+            <p className="text-sm opacity-90" style={{ color: c.base }}>{it.text}</p>
+          </div>
+        ))}
+      </div>
+
+    </Section>
+  );
 }
+
 
 function Location() {
   return (
